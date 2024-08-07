@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Courses</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(270deg, #add8e6, #000000);
+            background-size: cover;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height : 43px
+        }
+
+        .header-content {
+            width: 100%;
+            max-width: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        .dropdown-menu {
+            position: relative;
+            left : -15%; 
+            top: -10px;
+            font-weight: bold;
+        }
+
+        .dropdown-menu-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .dropdown-menu-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown-menu:hover .dropdown-menu-content {
+            display: block;
+        }
+
+        main {
+            width: 100%;
+            max-width: 100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .swiper-container {
+            width: 100%;
+        }
+        button.dropbtn {
+    position: relative;
+    left: 39px;
+    display: none;
+}
+
+        .swiper-slide {
+            position: relative;
+            left: -564%;
+            width: 205%;
+            height : 270px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .swiper-slide6 {
+            position: relative;
+            left: -564%;
+            width: 205%;
+            height : 270px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .swiper-slide2 {
+            position: relative;
+            left: -564%;
+            width: 205%;
+            height : 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: aliceblue;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            top: 56px;
+            left: -461%;
+            border-radius: 25px
+        }
+        .swiper-slide3 {
+            position: relative;
+            top: 20px;
+            width: 205%;
+            height : 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: lightsteelblue;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: -174px 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            top: 56px;
+            left: -100%;
+            border-radius: 25px
+        }
+        .swiper-slide4 {
+            position: relative;
+            top: 20px;
+            width: 205%;
+            height : 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: oldlace;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 3px 365px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            top: 56px;
+            left: -100%;
+            border-radius: 25px
+        }
+        .swiper-slide5 {
+            position: relative;
+            top: 684px;
+            width: 490%;
+            height : 23px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #007bff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 3px 365px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            left: -617%;
+            border-radius: -28%
+        }
+
+        .swiper-slide:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .view-more-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-more-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .course-footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: left;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            height: 130px;
+            position: relative;
+            top: 307px;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .map-container {
+            width: 300px;
+            height: 200px;
+        }
+
+        .contact-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        .popup {
+            
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            background-color: bisque;
+        }
+
+        .popup h2 {
+            margin: 0 0 10px;
+        }
+
+        .popup button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .course-footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-details {
+                margin-right: 0;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .map-container {
+                width: 100%;
+            }
+      
+            div#swiper-wrapper-e2f1e9ed8106b390d {
+    position: relative;
+    left: -450%;
+}
+
+            .swiper-slide {
+                width: auto;
+                margin: 0 5px;
+            }
+            
+
+            .swiper-container {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h4 style="position: relative; right: 549px; font-size: 24px;" >Trainings Academy</h4>
+            <div class="dropdown-menu">
+                <button class="dropbtn"></button>
+                Courses
+                <div class="dropdown-menu-content">
+                    <a href="#" onclick="showCourse('java')">Java</a>
+                    <a href="#" onclick="showCourse('ai')">Artificial Intelligence</a>
+                    <a href="#" onclick="showCourse('mysql')">MySQL</a>
+                    <a href="#" onclick="showCourse('manual-testing')">Manual Testing</a>
+                    <a href="#" onclick="showCourse('machine-learning')">Machine Learning</a>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Placements</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div id="java" class="swiper-slide" style="background-image: url('path/to/java-background-image.jpg');">
+                    <img style="position: relative; top: 19px; width: 225px; height: 126px;" src="D:\Front End Codes\Images\java.jpg" />
+                    <h4>Java</h4>
+                    <h6 style="position: relative; top: -40px; font-weight: 100;">Java is a multi-platform, object-oriented, and network-centric language that can be used as a platform in itself. It is a fast, secure, reliable programming language for coding everything from mobile apps and enterprise software to big data applications and server-side technologies.</h6>
+                    <button style="position: relative; bottom: 50px;" class="view-more-btn">View More</button>
+                </div>
+                <div id="ai" class="swiper-slide" style="background-image: url('path/to/ai-background-image.jpg');">
+                    <img style="position: relative; top: 19px; width: 225px; height: 126px;" src="D:\Front End Codes\Images\AI.jpg" />
+                    <h4>Artificial Intelligence</h4>
+                    <h6 style="position: relative; top: -40px; font-weight: 100;">Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.</h6>
+                    <button style="position: relative; bottom: 50px;" class="view-more-btn">View More</button>
+                </div>
+                <div id="mysql" class="swiper-slide" style="background-image: url('path/to/mysql-background-image.jpg');">
+                    <img style="position: relative; top: 19px; width: 225px; height: 126px;" src="D:\Front End Codes\Images\mysql.jpg" />
+                    <h4>MySQL</h4>
+                    <h6 style="position: relative; top: -40px; font-weight: 100;">MySQL is used to store data in tables that map to objects. Each table has a schema defining what columns each row of the table will have. Developers can reliably store and retrieve many data types, including text, numbers, dates, times, and even JSON.</h6>
+                    <button style="position: relative; bottom: 50px;" class="view-more-btn">View More</button>
+                </div>
+                <div id="manual-testing" class="swiper-slide" style="background-image: url('path/to/manual-testing-background-image.jpg');">
+                    <img style="position: relative; top: 19px; width: 225px; height: 126px;" src="D:\Front End Codes\Images\Manual Testing.jpg" />
+                    <h4>Manual Testing</h4>
+                    <h6 style="position: relative; top: -40px; font-weight: 100;">The purpose of manual testing is to catch bugs and feature issues before a software application goes live. When manually testing, the tester validates the key features of a software application. Analysts execute test cases and develop summary error reports without specialized automation tools.</h6>
+                    <button style="position: relative; bottom: 50px;" class="view-more-btn">View More</button>
+                </div>
+                <div id="machine-learning" class="swiper-slide" style="background-image: url('path/to/machine-learning-background-image.jpg');">
+                    <img style="position: relative; top: 19px; width: 225px; height: 126px;" src="D:\Front End Codes\Images\machine learning.jpg" />
+                    <h4>Machine Learning</h4>
+                  <h6 style="position: relative; top: -40px; font-weight: 100;">Machine learning is more explicitly used as a means to extract knowledge from data through techniques such as neural networks, supervised and unsupervised learning, decision trees, and linear regression. Just as machine learning is a subset of artificial intelligence, deep learning is a subset of machine learning.</h6>
+                    <button style="position: relative; bottom: 50px;" class="view-more-btn">View More</button>
+                   
+                </div>   
+            </div>
+            <span>    
+                    <button style="position: relative;top: 27px;color: #fff;border: none;width: 154%;padding: 8px 16px; background: #007bff;left : -29%" onclick="document.getElementById('popup').style.display = 'none';">Enroll for Courses</button>                   
+            </span>
+          <div>
+            
+            <div  id="Placements" class="swiper-slide2" style="background-image: url('path/to/manual-testing-background-image.jpg');">
+               
+                <h2 style="position: relative;top: -4px;color: cornflowerblue;">100%</h2>
+                <h2 style="position: relative; color:cornflowerblue;top: -18%">Placements</h2>
+            </div>
+            <div  id="Students Enrolled" class="swiper-slide3" style="background-image: url('path/to/manual-testing-background-image.jpg');">
+                <h4 style="position: relative;top: -4px; color: chocolate;">Students Enrolled</h4>
+                <h2 style="position: relative; color:chocolate;top: -18%">25K</h2>
+            </div>
+            <div  id="classes" class="swiper-slide4" style="background-image: url('path/to/manual-testing-background-image.jpg');">
+                <h4 style="position: relative;top: -4px; color:fuchsia;">Online/Offline Classes</h4>
+               
+            </div>
+            <div  id="Contact us" class="swiper-slide5" style="background-image: url('path/to/manual-testing-background-image.jpg');">
+                <a href="https://www.numetry.in/" style="color: black; text-decoration: none;">Contact Us@</a>
+               
+            </div>
+            <img style="position: relative; top: 89px; width: 245px; height: 219px;left: -411%;" src="D:\Front End Codes\Images\Numetry.jpg" />
+      <h3 style="position: relative;top: -139px;right: -159%;">Our Vision</h3>
+      <p style="position: relative;width: 623px;    top: -148px;"> To become the industry leader in providing bespoke technology services industry-wide,<br> globally by helping businesses in all our capacity to reach their truest potential via creating a thriving work environment, healthy work culture, <br>and promoting growth and development of the team.</p>
+    </div>
+
+    </main>
+    
+    
+ 
+  <div class="course-footer">
+    <div class="footer-content">
+        <div class="contact-details">
+            <div>Building A, Flat No.5,Gardenia<br> Park Phase II, Pune, Maharashtra</div>
+            <div>Pin:506381</div>
+            <div>Email:info@trainingsacademy.com</div>
+            <div>Phone: +91 12345 67890</div>
+        </div>
+        <img style="position: relative; top: 94px; width: 29px;left: -59%;cursor: pointer; height: 27px;" src="D:\Front End Codes\Images\insta.png" />
+        <img style="position: relative; top: 94px; width: 29px;left: -65%;cursor: pointer; height: 27px;" src="D:\Front End Codes\Images\linkden.png" />
+        <img style="position: relative; top: 94px; width: 29px;left: -71%;cursor: pointer; height: 27px;" src="D:\Front End Codes\Images\facebok.png" />
+        <img style="position: relative; top: 94px; width: 29px;left: -63%;cursor: pointer; height: 27px;" src="D:\Front End Codes\Images\youtube.png" />
+
+
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242117.70906421894!2d73.69814960406003!3d18.52487061465784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1716454197791!5m2!1sen!2sin" 
+                width="250" 
+                height="150" 
+                frameborder="0" 
+                style="border:0;" 
+                allowfullscreen="" 
+                aria-hidden="false" 
+                tabindex="0">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<div>
+<div id="popup" class="popup">
+    
+    <h2 style="position: relative; left : 33%">Trending Courses</h2>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div id="Aws" style="background-color:  bisque; border: 1px solid #ccc;" >
+                <img style="position: relative; top: 1px; width: 225px; height: 126px;" src="D:\Front End Codes\Images\AWS.jpg" />
+                <h4 style="position: relative;right: -40%; top: -5%;">AWS</h4>
+                <h6 style="position: relative; top: -11%;    right: -2%; font-weight: 100;">AWS is designed to allow application providers, ISVs, and vendors to quickly and securely host your applications – whether an existing application or a new SaaS-based application. You can use the AWS Management Console or well-documented web services APIs to access AWS's application hosting platform.</h6>
+                <button style="position: relative;top: -12%; background: brown;left : 45%" onclick="document.getElementById('popup').style.display = 'none';">Enroll</button>   
+            </div>
+            <div id="Salesforce"  style="background-color: bisque; border: 1px solid #ccc;">
+                <img style="position: relative; top: 1px; width: 225px; height: 126px;" src="D:\Front End Codes\Images\salesforce.jpg" />
+                <h4 style="position: relative;right: -15%; top: -5%;">Salesforce</h4>
+                <h6 style="position: relative; top: -11%; font-weight: 100;right: -2%;">Salesforce helps businesses keep track of customer interactions and sales data.It can manage leads, contacts, opportunities, and cases.Salesforce also offers several features to help businesses automate their sales and marketing processes, such as email marketing, lead capture, and lead scoring.</h6>
+                <button style="position: relative;top: -12%; background: brown;left : 45%" onclick="document.getElementById('popup').style.display = 'none';">Enroll</button>        
+            </div>
+            <div id="chatgpt"  style="background-color:  bisque; border: 1px solid #ccc;" >
+                <img style="position: relative; top: 1px; width: 225px; height: 126px;" src="D:\Front End Codes\Images\ChatGpt.jpg" />
+                <h4 style="position: relative;right: -34%; top: -5%;">ChatGpt</h4>
+                <h6 style="position: relative; top: -11%; font-weight: 100;">ChatGPT is an artificial intelligence (AI) chatbot that uses natural language processing to create humanlike conversational dialogue.The language model can respond to questions and compose various written content, including articles, social media posts, essays, code and emails.</h6>
+                <button style="position: relative;top: -12%; background: brown;left : 45%" onclick="document.getElementById('popup').style.display = 'none';">Enroll</button>   
+            </div>
+    
+        </div>
+      
+    <button style="position: relative; left : 45%" onclick="document.getElementById('popup').style.display = 'none';">Close</button>
+</div>
+</div>
+<div id="chatbot-popup" class="popup" style="position: relative;left: 86%;top: 50px;; width: 22%;">
+    <h2>Chatbot</h2>
+    <textarea style="position: relative;padding: 102px;width: 80px;height: 87px;" id="chat-input" rows="4" placeholder="Type your message here..."></textarea>
+    <div class="button-container">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="closeChatbot()">Cancel</button>
+    </div>
+</div>
+<div class="subscribe-form">
+    <form id="subscribe-form">
+        <input style="position: relative;top: 106px;left: 37%;" type="email" id="email" name="email" placeholder="Enter your email address" required>
+        <button style="position: relative;top: 106px;left: 37%;" type="submit">Subscribe</button>
+    </form>
+</div>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    function showCourse(courseId) {
+        var courses = document.getElementsByClassName('swiper-slide');
+        for (var i = 0; i < courses.length; i++) {
+            courses[i].style.display = 'none';
+        }
+        document.getElementById(courseId).style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    setTimeout(function() {
+        document.getElementById('popup').style.display = 'block';
+    }, 15000);
+    
+    
+    function sendMessage() {
+    const message = document.getElementById('chat-input').value;
+    const chatContainer = document.getElementById('chatbot-messages');
+    const userMessage = document.createElement('div');
+    userMessage.className = 'message user';
+    userMessage.textContent = message;
+    chatContainer.appendChild(userMessage);
+
+    const response = getChatbotResponse(message);
+    const botMessage = document.createElement('div');
+    botMessage.className = 'message bot';
+    botMessage.textContent = response;
+    chatContainer.appendChild(botMessage);
+
+    
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    
+    document.getElementById('chat-input').value = '';
+}
+
+function getChatbotResponse(message) {
+    
+    switch(message.toLowerCase()) {
+        case 'hello':
+            return "Hello! How can I assist you today?";
+        case 'how are you?':
+            return "I'm just a bot, but thank you for asking!";
+        case 'bye':
+            return "Goodbye! Have a great day!";
+        default:
+            return "I'm sorry, I didn't understand that.";
+    }
+}
+
+function closeChatbot() {
+    document.getElementById('chatbot-popup').style.display = 'none';
+}
+</script> 
+</body>
+</html>
